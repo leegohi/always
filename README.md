@@ -2,8 +2,10 @@
 目录里主要封装了一些自己常用的方法
 ## 1. doc2txt
 ** 本函数主要目的是方便在写爬虫的时候遇到word附件，下载后直接提取出文本文件。
+
 注意：需要安装antiword
-mac: brew install antiword
+
+mac下: brew install antiword
 ## 2. find_path_in_json
 ** 本函数主要目的是方便在遇到大json时候，查找value是否存在于json中，返回其在json里的路径。
 
@@ -14,7 +16,7 @@ mac: brew install antiword
 
 ```http
 GET https://test.com/address/address?callback=jQuery1102092&v=0.43041341799949273&areaid=0&_=1523927277183 HTTP/1.1
-Host: gensvr-n.vip.com
+Host:test.com
 Connection: keep-alive
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
 Accept: */*
@@ -48,7 +50,7 @@ python header2dict.py
  "Connection": "keep-alive", 
  "Accept": "*/*", 
  "User-Agent": "Mozilla/5.0(WindowsNT6.1;WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/65.0.3325.181Safari/537.36", 
- "Host": "gensvr-n.vip.com", 
+ "Host": "test.com", 
  "Referer": "https://myi.vip.com/address.html?ff=103|2|2|4"
 }
 ```
