@@ -16,8 +16,6 @@ def doc2txt(fobj):
         else:
             raise ArgumentTypeException(
                 "argument 'fobj' must be a file-like object or filename string.")
-        f = fobj
-
         new_env = dict(os.environ)  # Copy current environment
         new_env['LANG'] = 'zh_CN.UTF-8'
         # 注意如果shell=True，命令和参数必须作为整体字符串。否则应为一个list
