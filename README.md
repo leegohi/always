@@ -57,7 +57,7 @@ python header2dict.py
 
 请求参数和header都出来了
 
-## 3. download_with_progress
+## 4. download_with_progress
 ** 本模块主要是方便使用requests下载一些比较大的文件的时候。加个友好的进度条如下：
 
 fetch baidu python img  [####################################]  100%
