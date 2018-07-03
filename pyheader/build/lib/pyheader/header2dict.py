@@ -52,7 +52,7 @@ def get_headers():
     req = copy_text.split('\r')
     if len(req) == 1:
         req = copy_text.split("\n")
-    print req
+    print "RAW DATA:\n",req
     head = {}
     res=[]
     line1 = req[0]
@@ -68,12 +68,12 @@ def get_headers():
                 param = unquote(lastline.strip())
                 print param
                 data = dict(map(lambda i: i.split("=", 1), param.split("&")))
-        qstr = splitquery(line1.split(" ")[1])[1]
-        if qstr:
-            param = unquote(qstr)
-            data = dict(map(lambda i: i.split("=", 1), param.split("&")))
-            res.append("QUERY DATA:")
-            res.append(json.dumps(data, indent=1, ensure_ascii=False))
+    qstr = splitquery(line1.split(" ")[1])[1]
+    if qstr:
+        param = unquote(qstr)
+        data = dict(map(lambda i: i.split("=", 1), param.split("&")))
+        res.append("QUERY DATA:")
+        res.append(json.dumps(data, indent=1, ensure_ascii=False))
     for line in req[1:]:
         if line.startswith("Cookie"):
             continue
@@ -82,13 +82,13 @@ def get_headers():
         if not line.strip():
             break
         temp = line.strip().replace(" ", "").split(":", 1)
-        print temp
         head[temp[0]] = temp[1]
     res.append("HEADERS:")
     res.append(json.dumps(head, indent=1, ensure_ascii=False))
-
+    res_str="\n".join(res)
+    print res_str
     #重新转成bytes型
-    set_clip("\n".join(res))
+    set_clip(res_str)
 
 def main():
     get_headers()
