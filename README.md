@@ -10,7 +10,7 @@ mac下: brew install antiword
 ** 本函数主要目的是方便在遇到大json时候，查找value是否存在于json中，返回其在json里的路径。
 
 ## 3. pyheader
-** 本模块主要是方便写爬虫的时候，将fiddler里的raw也就是原始请求，转换成python字典（目前只支持mac）。
+** 本模块主要是方便写爬虫的时候，将fiddler里的raw也就是原始请求，转换成python字典（目前只支持mac、win7、win10）。
 
 比如fiddler里抓到的原始请求是：
 
