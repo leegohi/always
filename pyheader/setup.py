@@ -11,7 +11,9 @@ def install_requires():
     return []
 setup(
     name='pyheader',
-    url="https://zhuanlan.zhihu.com/c_208876015",
+    url="""https://zhuanlan.zhihu.com/c_208876015
+           https://github.com/leegohi/always.git
+        """,
     version="1.0",
     description='A headers tools for spider.',
     entry_points={

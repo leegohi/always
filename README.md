@@ -9,7 +9,7 @@ mac下: brew install antiword
 ## 2. find_path_in_json
 ** 本函数主要目的是方便在遇到大json时候，查找value是否存在于json中，返回其在json里的路径。
 
-## 3. header2dict
+## 3. pyheader
 ** 本模块主要是方便写爬虫的时候，将fiddler里的raw也就是原始请求，转换成python字典（目前只支持mac）。
 
 比如fiddler里抓到的原始请求是：
@@ -28,9 +28,15 @@ Cookie: cps=adp%3Auopxvvef%3A%3A%3A%3A; vip_first_visitor=1;
 
 直接copy原始请求（command+c）
 
+先安装pyheader
+
+python setup.py install
+
+安装成功之后
+
 执行
 
-python header2dict.py
+pyheader
 
 然后随便找个文本编辑器粘贴（command+v）
 

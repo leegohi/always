@@ -3,9 +3,12 @@ Name: pyheader
 Version: 1.0
 Summary: A headers tools for spider.
 Home-page: https://zhuanlan.zhihu.com/c_208876015
+           https://github.com/leegohi/always.git
+        
 Author: walle
 Author-email: walle88@qq.com
 License: Apache 2.0
+Description-Content-Type: UNKNOWN
 Description: UNKNOWN
 Platform: UNKNOWN
 Classifier: Development Status :: Beta
