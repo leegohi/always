@@ -5,4 +5,5 @@ pyheader.egg-info/PKG-INFO
 pyheader.egg-info/SOURCES.txt
 pyheader.egg-info/dependency_links.txt
 pyheader.egg-info/entry_points.txt
+pyheader.egg-info/requires.txt
 pyheader.egg-info/top_level.txt
