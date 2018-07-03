@@ -1,0 +1,3 @@
+[console_scripts]
+pyheader = pyheader.header2dict:main
+
