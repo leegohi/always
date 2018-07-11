@@ -59,14 +59,15 @@ def get_headers():
     if "POST" in line1 or "PUT" in line1:
         lastline = req[-1]
         try:
-            data=json.loads(lastline.strip())
             res.append("POST DATA:")
+            data=json.loads(lastline.strip())
             res.append(json.dumps(data, indent=1, ensure_ascii=False))
         except:
             traceback.print_exc()
             if "&" in lastline:
                 param = unquote(lastline.strip())
                 data = dict(map(lambda i: i.split("=", 1), param.split("&")))
+                res.append(json.dumps(data, indent=1, ensure_ascii=False))
     path,qstr = splitquery(line1.split(" ")[1])
     if qstr:
         param = unquote(qstr)
