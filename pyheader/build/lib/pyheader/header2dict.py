@@ -65,10 +65,12 @@ def get_headers():
             res.append("data="+json.dumps(data, indent=1, ensure_ascii=False))
         except:
             traceback.print_exc()
-            if "&" in lastline:
+            if "&" in lastline or "=" in lastline:
                 param = unquote(lastline.strip())
                 data = dict(map(lambda i: i.split("=", 1), param.split("&")))
-                res.append("data="+json.dumps(data, indent=1, ensure_ascii=False))
+            else:
+                data={}
+            res.append("data="+json.dumps(data, indent=1, ensure_ascii=False))
     path,qstr = splitquery(line1.split(" ")[1])
     if qstr:
         param = unquote(qstr)
