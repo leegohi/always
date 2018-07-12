@@ -59,21 +59,24 @@ def get_headers():
     if "POST" in line1 or "PUT" in line1:
         lastline = req[-1]
         try:
-            res.append("POST DATA:")
+            res.append("data=")
             data=json.loads(lastline.strip())
             res.append(json.dumps(data, indent=1, ensure_ascii=False))
+            res.append("/n")
         except:
             traceback.print_exc()
             if "&" in lastline:
                 param = unquote(lastline.strip())
                 data = dict(map(lambda i: i.split("=", 1), param.split("&")))
                 res.append(json.dumps(data, indent=1, ensure_ascii=False))
+                res.append("/n")
     path,qstr = splitquery(line1.split(" ")[1])
     if qstr:
         param = unquote(qstr)
         data = dict(map(lambda i: i.split("=", 1), param.split("&")))
-        res.append("QUERY DATA:")
+        res.append("params=")
         res.append(json.dumps(data, indent=1, ensure_ascii=False))
+        res.append("/n")
     for line in req[1:]:
         if line.startswith("Cookie"):
             continue
@@ -83,9 +86,10 @@ def get_headers():
             break
         temp = line.strip().replace(" ", "").split(":", 1)
         head[temp[0]] = temp[1]
-    res.append("HEADERS:")
+    res.append("headers=")
     res.append(json.dumps(head, indent=1, ensure_ascii=False))
-    res.append("URL:")
+    res.append("/n")
+    res.append("url=")
     if path.startswith("https://") or path.startswith("http://"):
         res.append(path)
     else:
