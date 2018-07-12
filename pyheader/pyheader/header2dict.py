@@ -56,7 +56,9 @@ def get_headers():
     head = {}
     res=[]
     line1 = req[0]
+    method="get"
     if "POST" in line1 or "PUT" in line1:
+        method="post"
         lastline = req[-1]
         try:
             data=json.loads(lastline.strip())
@@ -86,6 +88,7 @@ def get_headers():
         res.append('url="%s"'%path)
     else:
         res.append('url="%s"'%(head["Host"]+path))
+    res.append("response=requests.%s(url,data=data,headers=headers,params=params)"%method)
     res_str="\n".join(res)
     decode_res=res_str.decode("utf-8")
     print decode_res
