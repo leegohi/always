@@ -94,7 +94,7 @@ def get_headers():
         res.append(path)
     else:
         res.append(head["Host"]+path)
-    res_str="\n".join(res)
+    res_str="".join(res)
     decode_res=res_str.decode("utf-8")
     print decode_res
     #重新转成bytes型
